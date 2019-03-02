@@ -1,0 +1,10 @@
+1.slot 插槽
+<template>
+      <button class="g-button">
+          <slot></slot>
+      </button>
+  </template>
+
+  <g-button >我爱js</g-button>
+
+2.
