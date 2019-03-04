@@ -8,8 +8,6 @@
       <slot></slot>
     </div>
     <!-- /.content -->
-
-
   </button>
 </template>
 
@@ -22,14 +20,12 @@
                 default:'left',
                 /* 自定义验证*/
                 validator(value){
-                    return !(value !== 'right' && value !== 'left');
+                    return value === 'right' || value === 'left';
                 }
             }
         },
-
-
         created: function () {
-            console.log('props', this.icon);
+            console.log('props', this._props);
         }
     }
 </script>
