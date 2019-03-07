@@ -1,6 +1,6 @@
 <template>
   <button class="g-button" :class="{[`icon-${iconPosition}`]:true}" @click="on_click">
-    <Icon :icon="'loading'" v-if="loading"></Icon>
+    <Icon :icon="'loading'" v-if="loading ? loading : false"></Icon>
     <Icon :icon="icon" v-else></Icon>
     <div class="content">
       <slot></slot>
@@ -12,6 +12,7 @@
 <script>
     import Icon from './component/Icon'
     export default {
+        name:'g-button',
         props: {
             icon:{},
             iconPosition:{
@@ -26,7 +27,7 @@
 
         },
         created: function () {
-            console.log('props', this._props);
+            //console.log('props', this._props);
         },
         components:{Icon},
         methods:{
