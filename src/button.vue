@@ -1,6 +1,7 @@
 <template>
-  <button class="g-button" :class="{[`icon-${iconPosition}`]:true}">
-    <Icon :icon="icon"></Icon>
+  <button class="g-button" :class="{[`icon-${iconPosition}`]:true}" @click="on_click">
+    <Icon :icon="'loading'" v-if="loading"></Icon>
+    <Icon :icon="icon" v-else></Icon>
     <div class="content">
       <slot></slot>
     </div>
@@ -20,12 +21,19 @@
                 validator(value){
                     return value === 'right' || value === 'left';
                 }
-            }
+            },
+            loading:false
+
         },
         created: function () {
             console.log('props', this._props);
         },
-        components:{Icon}
+        components:{Icon},
+        methods:{
+            on_click:function () {
+                this.loading = !this.loading;
+            }
+        }
     }
 </script>
 
@@ -74,6 +82,20 @@
         order: 1;
       }
 
+    }
+  }
+
+  .loading {
+    animation: spin 1s infinite linear;
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0);
+    }
+
+    to {
+      transform: rotate(360deg);
     }
   }
 
