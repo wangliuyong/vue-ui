@@ -18,7 +18,7 @@ props: {
                     return value === 'right' || value === 'left';
                 }
             }
-        },
+        }
 
 
 3.动画
@@ -35,3 +35,6 @@ props: {
       transform: rotate(360deg);
     }
   }
+
+  4.ctrl+d向下复制一行
+  5.

@@ -10,7 +10,7 @@
         name: "g-button-group",
         mounted: function () {
             for (let node of this.$el.children) {
-                console.log(node.nodeName);
+                //console.log(node.nodeName);
                 let name = node.nodeName
                 if (name !== 'BUTTON') {
                     console.warn(`button-group的子元素应该是button,但是你的子元素是${name.toLocaleLowerCase()}`)
