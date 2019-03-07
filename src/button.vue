@@ -1,6 +1,6 @@
 <template>
   <button class="g-button" :class="{[`icon-${iconPosition}`]:true}" @click="on_click">
-    <Icon :icon="'loading'" v-if="loading ? loading : false"></Icon>
+    <Icon :icon="'loading'" v-if="isLoading"></Icon>
     <Icon :icon="icon" v-else></Icon>
     <div class="content">
       <slot></slot>
@@ -26,13 +26,18 @@
             loading:false
 
         },
+        data(){
+            return{
+                isLoading:false
+            }
+        },
         created: function () {
             //console.log('props', this._props);
         },
         components:{Icon},
         methods:{
             on_click:function () {
-                this.loading = !this.loading;
+                this.isLoading = !this.isLoading;
             }
         }
     }
