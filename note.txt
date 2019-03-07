@@ -7,4 +7,31 @@
 
   <g-button >我爱js</g-button>
 
-2.
+2.组件过滤属性
+props: {
+            icon:{},
+            iconPosition:{
+                type:String,
+                default:'left',
+                /* 自定义验证*/
+                validator(value){
+                    return value === 'right' || value === 'left';
+                }
+            }
+        },
+
+
+3.动画
+.Loading {
+    animation: spin 1s infinite linear;
+  }
+
+  @keyframes spin {
+    from {
+     transform: rotate(0);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
