@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/wangliuyong/vue-ui#readme",
   "dependencies": {
+    "chai": "^4.2.0",
     "vue": "^2.6.8",
     "vue-hot-reload-api": "^2.3.3"
   },
@@ -28,6 +29,6 @@
     "vue-template-compiler": "^2.6.8"
   },
   "alias": {
-    "vue" : "./node_modules/vue/dist/vue.common.js"
+    "vue": "./node_modules/vue/dist/vue.common.js"
   }
 }

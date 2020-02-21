@@ -18,7 +18,7 @@
             iconPosition:{
                 type:String,
                 default:'left',
-                /* 自定义验证*/
+                /* 自定义验证,检查输入的属性的值是否合法，必须返回true*/
                 validator(value){
                     return value === 'right' || value === 'left';
                 }
