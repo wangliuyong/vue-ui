@@ -2,7 +2,7 @@
   <button class="g-button" :class="{[`icon-${iconPosition}`]:true}" @click="on_click">
     <Icon :icon="'loading'" v-if="isLoading && icon"></Icon>
     <Icon :icon="icon" v-else></Icon>
-    <div class="content">
+    <div  class="content">
       <slot></slot>
     </div>
     <!-- /.content -->
