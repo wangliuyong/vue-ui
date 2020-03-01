@@ -1,6 +1,6 @@
 <template>
   <button class="g-button" :class="{[`icon-${iconPosition}`]:true}" @click="on_click">
-    <Icon :icon="'loading'" v-if="isLoading && icon"></Icon>
+    <Icon :icon="'loading'" v-if="loading"></Icon>
     <Icon :icon="icon" v-else></Icon>
     <div  class="content">
       <slot></slot>
@@ -14,21 +14,21 @@
     export default {
         name:'g-button',
         props: {
-            icon:{},
-            iconPosition:{
+            icon: {},
+            iconPosition: {
                 type:String,
                 default:'left',
                 /* 自定义验证,检查输入的属性的值是否合法，必须返回true*/
-                validator(value){
+                validator(value) {
                     return value === 'right' || value === 'left';
                 }
             },
-            loading:false
+            loading: false
 
         },
         data(){
             return{
-                isLoading:false
+                isLoading: false
             }
         },
         created: function () {
@@ -37,7 +37,7 @@
         components:{Icon},
         methods:{
             on_click:function () {
-                this.isLoading = !this.isLoading;
+              this.loading =!this.loading;
             }
         }
     }

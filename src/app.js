@@ -12,12 +12,23 @@ Vue.component('g-button-group', ButtonGroup);
 
 const App = new Vue({
   el: "#app",
+  data:{
+    loading: false
+  },
+  methods:{
+    clickButton(){
+
+      console.log(2222)
+      this.loading = !this.loading;
+    }
+  }
 });
 
 const Constructor=Vue.extend(Button);
 let button = new Constructor({
   propsData:{
-    icon: 'setting'
+    icon: 'setting',
+    loading: true
   }
 });
 
@@ -27,8 +38,6 @@ let useElement = button.$el.querySelector('use');
 
 let expect = chai.expect;
 
-let 
+let href = useElement.getAttribute('xlink:href');
 
-// console.log(useElement)
-
-console.log(Constructor);
+expect(href).to.eq('#i-setting')
