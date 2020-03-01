@@ -5,6 +5,10 @@ import ButtonGroup from './component/button-group.vue';
 // 引入断言库chai
 import chai  from 'chai';
 
+import spies from 'chai-spies';
+
+chai.use(spies);
+
 
 //注册全局的组件
 Vue.component('g-button', Button);
@@ -32,7 +36,15 @@ let button = new Constructor({
   }
 });
 
-button.$mount('#test');
+const spy = chai.spy(() => {});
+
+let div = document.createElement(div);
+
+document.body.appendChild(div);
+
+button.$mount(div);
+
+button.$on('click', spy)
 
 let useElement = button.$el.querySelector('use');
 
@@ -41,3 +53,6 @@ let expect = chai.expect;
 let href = useElement.getAttribute('xlink:href');
 
 expect(href).to.eq('#i-setting')
+button.click();
+
+expect(spy).to.have.called();

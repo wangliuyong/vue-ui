@@ -19,6 +19,7 @@
   "homepage": "https://github.com/wangliuyong/vue-ui#readme",
   "dependencies": {
     "chai": "^4.2.0",
+    "chai-spies": "^1.0.0",
     "vue": "^2.6.8",
     "vue-hot-reload-api": "^2.3.3"
   },
